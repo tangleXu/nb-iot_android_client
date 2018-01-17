@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:attr="http://schemas.android.com/apk/res/com.example.nb_iotutility"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#e5e8ee"
+    >
+    <LinearLayout 
+android:orientation="horizontal" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent"
+android:gravity="center"
+android:background="#FFF"
+android:layout_weight="1">
+<ImageView 
+    android:src="@drawable/eric_logo"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="0dp"
+    />
+<TextView 
+android:text="NB-IoT信号诊断" 
+android:gravity="center" 
+android:background="#FFF" 
+android:layout_width="fill_parent" 
+android:layout_height="50dp"
+android:textSize="20dp"
+android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout 
+android:orientation="horizontal" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1">
+<LinearLayout 
+android:orientation="vertical" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1">
+<TextView 
+android:text="MCC:" 
+android:gravity="center_horizontal" 
+android:background="#c1e2b3" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+<TextView 
+android:text="MNC:" 
+android:gravity="center_horizontal" 
+android:background="#1ceeb3" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+<TextView 
+android:text="EARFCN:" 
+android:gravity="center_horizontal" 
+android:background="#bbb" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+<TextView 
+android:text="GCELLID:" 
+android:gravity="center_horizontal" 
+android:background="#fefefe" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+<TextView 
+android:text="TAC:" 
+android:gravity="center_horizontal" 
+android:background="#ecede1" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+<TextView 
+android:text="CAT:" 
+android:gravity="center_horizontal" 
+android:background="#c1dde3" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+</LinearLayout>
+<LinearLayout 
+android:orientation="vertical" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1">
+<TextView 
+android:text="SINR:" 
+android:gravity="center_horizontal" 
+android:background="#aaa" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+<TextView 
+android:text="BIND:" 
+android:gravity="center_horizontal" 
+android:background="#00aa00" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+<TextView 
+android:text="PCI:" 
+android:gravity="center_horizontal" 
+android:background="#fcfe2a" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+<TextView 
+android:text="RSRP:" 
+android:gravity="center_horizontal" 
+android:background="#a2a502" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+<TextView 
+android:text="RSRQ:" 
+android:gravity="center_horizontal" 
+android:background="#eee" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+<TextView 
+android:text="RSSI:" 
+android:gravity="center_horizontal" 
+android:background="#ccc" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+android:layout_weight="1" />
+
+</LinearLayout>
+</LinearLayout>    
+
+<com.example.nb_iotutility.MyImageView 
+    	android:id="@+id/myImgView01"
+        android:src="@drawable/signal1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        attr:auto_play="false"
+        />      
+
+
+
+    <ImageButton
+        android:id="@+id/img_btn_scan"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/bt_scan" />
+            
+</LinearLayout>

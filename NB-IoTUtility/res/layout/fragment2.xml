@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res/com.example.nb_iotutility"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_cfg_title"
+        android:layout_width="fill_parent"
+        android:layout_height="30sp"
+        android:gravity="center"
+        android:text="Configuration(配置)"
+        android:textSize="22sp" />
+
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnQuery"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Refresh" />
+
+        <Button
+            android:id="@+id/btnSet"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Setting" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Network Parameters" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tvNetwork"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Network:" />
+                <!--
+                <EditText
+		            android:id="@+id/editText1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="2"
+		            android:text="46012"
+		             > 
+					
+		        </EditText>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddd"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvNetwork2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eee"
+                    android:layout_weight="1"
+                    android:text="Network Search Mode:" />
+
+			    <RadioGroup android:id="@+id/radioGroup" android:contentDescription="Network Search Mode:" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AUTO模式" />
+
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GSM ONLY" />
+
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LTE ONLY" />
+
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GSM LTE" />
+                </RadioGroup>
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvNetwort3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eee"
+                    android:layout_weight="1"
+                    android:text="LTE Search Mode:" />
+
+			   <RadioGroup android:id="@+id/radioGroup1" android:contentDescription="LTE Search Mode:" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    
+                <RadioButton
+                    android:id="@+id/rb11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LTE CatM1 only" />
+
+                <RadioButton
+                    android:id="@+id/rb12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LTE CatNB1 only" />
+
+                <RadioButton
+                    android:id="@+id/rb13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LTE CatM1 and LTE CatNB1" />
+            </RadioGroup>
+            
+            </LinearLayout>
+
+        
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Operation" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddd"
+                android:orientation="horizontal" >
+			               
+            <Button
+            android:id="@+id/btnAttach"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Attach" />
+            <Button
+            android:id="@+id/btnDetach"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Detach" />
+            <Button
+            android:id="@+id/btnRst"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Reset" />
+            <Button
+            android:id="@+id/btnPWR"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Power" />                   
+			</LinearLayout>
+
+ 
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddd"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvNetwork3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eee"
+                    android:layout_weight="1"
+                    android:text="eDRX Settings:" />
+
+			   <RadioGroup android:id="@+id/rgeDRXMode" android:contentDescription="eDRX mode" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    
+                <RadioButton
+                    android:id="@+id/rb31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0, Disable eDRX" />
+
+                <RadioButton
+                    android:id="@+id/rb32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1, Enable eDRX" />
+
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/tveDRXRAT"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eee"
+                    android:layout_weight="1"
+                    android:text="eDRX RAT:" />
+               <RadioGroup android:id="@+id/rgeDRXRAT" android:contentDescription="eDRX RAT" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    
+                <RadioButton
+                    android:id="@+id/rb33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1, LTE-M1" />
+
+                <RadioButton
+                    android:id="@+id/rb34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2, GSM" />
+                <RadioButton
+                    android:id="@+id/rb35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3, UMTS" />
+
+                <RadioButton
+                    android:id="@+id/rb36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4, LTE" />
+                <RadioButton
+                    android:id="@+id/rb37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5, LTE-NB" />
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/tveDRXCycle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eee"
+                    android:layout_weight="1"
+                    android:text="eDRX Cycle:" />
+               <RadioGroup android:id="@+id/rgeDRXCycle" android:contentDescription="eDRX Cycle" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    
+                <RadioButton
+                    android:id="@+id/rb41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 0 0 0 (5.12s)" />
+
+                <RadioButton
+                    android:id="@+id/rb42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 0 0 1 (10.24s)" />
+                <RadioButton
+                    android:id="@+id/rb43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 0 1 0 (20.48s)" />
+
+                <RadioButton
+                    android:id="@+id/rb44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 0 1 1 (40.96s)" />
+                <RadioButton
+                    android:id="@+id/rb45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 1 0 0 (81.92s)" />
+                <RadioButton
+                    android:id="@+id/rb46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 1 0 1 (163.84s)" />
+
+                <RadioButton
+                    android:id="@+id/rb47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 1 1 0 (327.68s)" />
+                <RadioButton
+                    android:id="@+id/rb48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 1 1 1 (655.36s)" />
+
+                <RadioButton
+                    android:id="@+id/rb49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1 0 0 0 (1310.72s)" />
+                <RadioButton
+                    android:id="@+id/rb50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1 0 0 1 (2621.44s)" />
+                
+                </RadioGroup>                                
+            </LinearLayout>               
+			
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="PING Test" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TCP Test" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="UDP Test" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="HTTP Test" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="LWM2M Test" />
+			<TextView
+                android:id="@+id/textView8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MQTT Test" />
+
+                           
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
