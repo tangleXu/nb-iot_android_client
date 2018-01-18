@@ -1,6 +1,8 @@
 package com.example.nb_iotutility;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
@@ -25,6 +28,7 @@ import android.webkit.WebView;
  * 
  */
 public class MainActivity extends FragmentActivity {
+	public static final int SHOW_RESPONSE = 0;
 	private WebView myWebView;
 	/**
 	 * FragmentTabhost
@@ -60,6 +64,8 @@ public class MainActivity extends FragmentActivity {
 	 * 
 	 * 
 	 */
+	public Handler handler;
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -68,7 +74,23 @@ public class MainActivity extends FragmentActivity {
 
 		initView();
 		
+        handler = new Handler() {
 
+    		@Override
+    		public void handleMessage(Message msg) {
+    			// TODO Auto-generated method stub
+    			super.handleMessage(msg);
+    			switch(msg.what){
+    			case SHOW_RESPONSE:
+    				String response = (String)msg.obj;
+    				Toast.makeText(getApplicationContext(),response, 0).show();
+    				break;
+    			default:
+    				break;
+    				
+    			}
+    		}
+    	};
 		
 	}
 

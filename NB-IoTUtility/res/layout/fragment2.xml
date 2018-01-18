@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Network:" />
-                <!--
+                <!-- -->
                 <EditText
 		            android:id="@+id/editText1"
 		            android:layout_width="fill_parent"
@@ -71,9 +71,8 @@
 		            android:layout_weight="2"
 		            android:text="46012"
 		             > 
-					
-		        </EditText>-->
-
+					</EditText>
+		        
             </LinearLayout>
 
             <LinearLayout
@@ -358,31 +357,153 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="PING Test" />
-
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/editText1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="114.114.114.114"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnPing"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:text="Ping" />
+    </LinearLayout>
+    
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="TCP Test" />
-            <TextView
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="SERVER IP:"
+             />
+					<EditText
+		            android:id="@+id/etTCPServer"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="114.114.114.114"
+		             > 
+					</EditText>
+    </LinearLayout>
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PORT:"
+             />
+					<EditText
+		            android:id="@+id/etTCPPort"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="8000"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnTCPConn"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Connect" />
+    </LinearLayout>
+        
+
+    		<TextView
                 android:id="@+id/textView5"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="UDP Test" />
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/etUDP"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="UDP data."
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnUDP"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="UDP Test" />
+    </LinearLayout>
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="HTTP Test" />
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/etHttp"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="HTTP data"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnHTTP"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="HTTP Test" />
+    </LinearLayout>
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="LWM2M Test" />
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/etLWM2M"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="MQTT data"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnLWM2M"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="LWM2M Test" />
+    </LinearLayout>
 			<TextView
                 android:id="@+id/textView8"
                 android:layout_width="fill_parent"
@@ -390,7 +511,25 @@
                 android:gravity="center"
                 android:text="MQTT Test" />
 
-                           
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/etMQTT"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="MQTT Data"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnMQTT"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="MQTT Test" />
+    </LinearLayout>                          
         </LinearLayout>
     </ScrollView>
 

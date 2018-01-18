@@ -4,6 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="#F000">
-    
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:textSize="30sp"
+        android:text="Export Mode(专家模式)" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="180sp"
+        android:background="#eee"
+        android:text="TextView" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:textSize="10sp"
+        android:text="(Direct send AT commands to module.)" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+					<EditText
+		            android:id="@+id/etMQTT"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="AT+CSQ"
+		            android:textColor="#3211dd"
+		            android:background="#1b1b1b"
+		             > 
+					</EditText>
+        <Button
+            android:id="@+id/btnMQTT"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="Send" />
+    </LinearLayout>  
+    
 </LinearLayout>

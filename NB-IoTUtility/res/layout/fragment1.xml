@@ -23,7 +23,7 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="爱立信NB-IoT信号诊断工具"
         android:textColor="#220011"
         android:gravity="center" 
@@ -38,16 +38,20 @@
         android:layout_marginTop="10dp"
         android:gravity="center" 
         android:text="(爱立信上海WILD-C&amp;OpenIoT Lab.)" />
-    
-
-		
 <com.example.nb_iotutility.MyImageView 
         android:src="@drawable/radio_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="5dp"
         attr:auto_play="true"
-        />        
+        />       
+<ImageView
+    android:src="@drawable/poc" 
+    android:layout_width="250sp"
+    android:layout_height="310sp"
+    />
+		
+     
     </LinearLayout>
     
 </AbsoluteLayout>
