@@ -199,7 +199,38 @@
             android:layout_weight="1"
             android:text="Power" />                   
 			</LinearLayout>
-
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddd"
+                android:orientation="horizontal" >
+			               
+            <Button
+            android:id="@+id/btnSIGINFO"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="SignalInfo" />
+            <Button
+            android:id="@+id/btnEMM"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="EMM" />
+            <Button
+            android:id="@+id/btnESM"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="ESM" />
+            <Button
+            android:id="@+id/btnPPP"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="PPP" />                   
+			</LinearLayout>
+            
  
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -362,7 +393,7 @@
         android:layout_height="60dp"
         android:orientation="horizontal" >
 					<EditText
-		            android:id="@+id/editText1"
+		            android:id="@+id/etPingAddr"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
 		            android:layout_weight="1"

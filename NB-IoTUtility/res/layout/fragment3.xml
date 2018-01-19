@@ -16,11 +16,13 @@ android:background="#FFF"
 android:layout_weight="1">
 <ImageView 
     android:src="@drawable/eric_logo"
+    android:id="@+id/viewLogo"
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_marginTop="0dp"
     />
 <TextView 
+android:id="@+id/tvTitle"
 android:text="NB-IoT信号诊断" 
 android:gravity="center" 
 android:background="#FFF" 
@@ -42,6 +44,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1">
 <TextView 
 android:text="MCC:" 
+android:id="@+id/tvMCC"
 android:gravity="center_horizontal" 
 android:background="#c1e2b3" 
 android:layout_width="fill_parent" 
@@ -49,6 +52,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1" />
 <TextView 
 android:text="MNC:" 
+android:id="@+id/tvMNC"
 android:gravity="center_horizontal" 
 android:background="#1ceeb3" 
 android:layout_width="fill_parent" 
@@ -56,6 +60,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1" />
 <TextView 
 android:text="EARFCN:" 
+android:id="@+id/tvEARFCN"
 android:gravity="center_horizontal" 
 android:background="#bbb" 
 android:layout_width="fill_parent" 
@@ -63,6 +68,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1" />
 <TextView 
 android:text="GCELLID:" 
+android:id="@+id/tvGCELLID"
 android:gravity="center_horizontal" 
 android:background="#fefefe" 
 android:layout_width="fill_parent" 
@@ -70,6 +76,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1" />
 <TextView 
 android:text="TAC:" 
+android:id="@+id/tvTAC"
 android:gravity="center_horizontal" 
 android:background="#ecede1" 
 android:layout_width="fill_parent" 
@@ -77,6 +84,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1" />
 <TextView 
 android:text="CAT:" 
+android:id="@+id/tvCAT"
 android:gravity="center_horizontal" 
 android:background="#c1dde3" 
 android:layout_width="fill_parent" 
@@ -90,6 +98,7 @@ android:layout_height="fill_parent"
 android:layout_weight="1">
 <TextView 
 android:text="SINR:" 
+android:id="@+id/tvSINR"
 android:gravity="center_horizontal" 
 android:background="#aaa" 
 android:layout_width="fill_parent" 
@@ -98,6 +107,7 @@ android:layout_weight="1" />
 
 <TextView 
 android:text="BIND:" 
+android:id="@+id/tvBIND"
 android:gravity="center_horizontal" 
 android:background="#00aa00" 
 android:layout_width="fill_parent" 
@@ -106,6 +116,7 @@ android:layout_weight="1" />
 
 <TextView 
 android:text="PCI:" 
+android:id="@+id/tvPCI"
 android:gravity="center_horizontal" 
 android:background="#fcfe2a" 
 android:layout_width="fill_parent" 
@@ -114,6 +125,7 @@ android:layout_weight="1" />
 
 <TextView 
 android:text="RSRP:" 
+android:id="@+id/tvRSRP"
 android:gravity="center_horizontal" 
 android:background="#a2a502" 
 android:layout_width="fill_parent" 
@@ -122,6 +134,7 @@ android:layout_weight="1" />
 
 <TextView 
 android:text="RSRQ:" 
+android:id="@+id/tvRSRQ"
 android:gravity="center_horizontal" 
 android:background="#eee" 
 android:layout_width="fill_parent" 
@@ -130,6 +143,7 @@ android:layout_weight="1" />
 
 <TextView 
 android:text="RSSI:" 
+android:id="@+id/tvRSSI"
 android:gravity="center_horizontal" 
 android:background="#ccc" 
 android:layout_width="fill_parent" 

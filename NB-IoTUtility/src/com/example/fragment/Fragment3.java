@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fragment.ReportSignalInfo;
@@ -38,12 +41,16 @@ public class Fragment3 extends Fragment implements OnClickListener{
 	private static final int REQUEST_ENABLE_BT = 0;
 	private static final int NET_READ_TIMEOUT_MILLIS = 0;
 	private static final int NET_CONNECT_TIMEOUT_FILLIS = 0;
+	protected static final int UPDATE_SIGNAL_INFO = 1;
+	
 	private  BluetoothSocket mmSocket;
 	private BluetoothAdapter mBluetoothAdapter;
 	public String mmStrCmd;
 	public ReportSignalInfo rsi;
 	public String mStrMCC,mStrMNC,mStrTAC,mStrEARFCN,mStrGCELLID,mStrCAT,mStrSINR,mStrPCI,mStrRSRP,mStrRSRQ,mStrRSSI,mStrBAND;
-	
+    private TextView mtvMCC,mtvMNC,mtvEARFCN,mtvGCELLID,mtvTAC,mtvCAT,mtvSINR,mtvBIND,mtvPCI,mtvRSRP,mtvRSRQ,mtvRSSI;
+    public Handler f3_handler;
+    
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {	
 		curView = inflater.inflate(R.layout.fragment3, null);
@@ -55,12 +62,59 @@ public class Fragment3 extends Fragment implements OnClickListener{
 		imgBtn.setOnClickListener((OnClickListener) this);
 		InitSound();
 		InitBluetooth();
+		InitInfoView();
 		
 		miv = (MyImageView) curView.findViewById(R.id.myImgView01);
 		rsi = new ReportSignalInfo(this.getActivity());
-		
+
+		f3_handler = new Handler() {
+
+    		@Override
+    		public void handleMessage(Message msg) {
+    			// TODO Auto-generated method stub
+    			super.handleMessage(msg);
+    			switch(msg.what){
+    			case UPDATE_SIGNAL_INFO:
+    				//String response = (String)msg.obj;
+    				//mtvMCC,mtvMNC,mtvEARFCN,mtvGCELLID,mtvTAC,mtvCAT,mtvSINR,mtvBIND,mtvPCI,mtvRSRP,mtvRSRQ,mtvRSSI;
+    				mtvMCC.setText(mStrMCC);
+    				mtvMNC.setText(mStrMNC);
+    				mtvEARFCN.setText(mStrEARFCN);
+    				mtvGCELLID.setText(mStrGCELLID);
+    				mtvTAC.setText(mStrTAC);
+    				mtvCAT.setText(mStrCAT);
+    				mtvSINR.setText(mStrSINR);
+    				mtvBIND.setText(mStrBAND);
+    				mtvPCI.setText(mStrPCI);
+    				mtvRSRP.setText(mStrRSRP);
+    				mtvRSRQ.setText(mStrRSRQ);
+    				mtvRSSI.setText(mStrRSSI);
+    				
+    				break;
+    			default:
+    				break;
+    				
+    			}
+    		}
+    	};
+    	
 		return curView;
-	}	
+	}
+	public void InitInfoView(){
+		//mtvMCC,mtvMNC,mtvEARFCN,mtvGCELLID,mtvTAC,mtvCAT,mtvSINR,mtvBIND,mtvPCI,mtvRSRP,mtvRSRQ,mtvRSSI;
+		mtvMCC = (TextView) curView.findViewById(R.id.tvMCC);
+		mtvMNC = (TextView) curView.findViewById(R.id.tvMNC);
+		mtvEARFCN = (TextView) curView.findViewById(R.id.tvEARFCN);
+		mtvGCELLID = (TextView) curView.findViewById(R.id.tvGCELLID);
+		mtvTAC = (TextView) curView.findViewById(R.id.tvTAC);
+		mtvCAT = (TextView) curView.findViewById(R.id.tvCAT);
+		mtvSINR = (TextView) curView.findViewById(R.id.tvSINR);
+		mtvBIND = (TextView) curView.findViewById(R.id.tvBIND);
+		mtvRSRP = (TextView) curView.findViewById(R.id.tvRSRP);
+		mtvRSRQ = (TextView) curView.findViewById(R.id.tvRSRQ);
+		mtvRSSI = (TextView) curView.findViewById(R.id.tvRSSI);
+		mtvPCI = (TextView) curView.findViewById(R.id.tvPCI);
+	}
 	public void InitBluetooth(){
         ///BT TEST
         
@@ -147,29 +201,60 @@ public class Fragment3 extends Fragment implements OnClickListener{
 					Log.d("ARIC", xx);
 					////Parse Information.
 					String ret;
-					mStrEARFCN = ret = ParseLineInfo(xx, ".*(EARFCN:.+)GCELLID");
-					
+					ret = ParseLineInfo(xx, ".*(EARFCN:.+)GCELLID");
+					if(ret.indexOf("EARFCN")>=0)
+						mStrEARFCN = ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrGCELLID = ret = ParseLineInfo(xx, ".*(GCELLID:.+)TAC");
+					ret = ParseLineInfo(xx, ".*(GCELLID:.+)TAC");
+					if(ret.indexOf("GCELLID")>=0)
+						mStrGCELLID = ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrMCC = ret = ParseLineInfo(xx, ".*(TAC:.+)MCC");
+					ret = ParseLineInfo(xx, ".*(TAC:.+)MCC");
+					if(ret.indexOf("TAC")>=0)
+						mStrTAC =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrMCC = ret = ParseLineInfo(xx, ".*(MCC:.+)MNC");
+					ret = ParseLineInfo(xx, ".*(MCC:.+)MNC");
+					if(ret.indexOf("MCC")>=0)
+						mStrMCC =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrMNC = ret = ParseLineInfo(xx, ".*(MNC:.+)DLBW");
+					ret = ParseLineInfo(xx, ".*(MNC:.+)DLBW");
+					if(ret.indexOf("MNC")>=0)
+						mStrMNC =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrSINR = ret = ParseLineInfo(xx, ".*(SINR:.+)CAT");
+					ret = ParseLineInfo(xx, ".*(SINR:.+)CAT");
+					if(ret.indexOf("SINR")>=0)
+						mStrSINR =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrCAT = ret = ParseLineInfo(xx, ".*(CAT:.+)BAND");
+					ret = ParseLineInfo(xx, ".*(CAT:.+)BAND");
+					if(ret.indexOf("CAT")>=0)
+						mStrCAT =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrBAND = ret = ParseLineInfo(xx, ".*(BAND:.+)PCI");
+					ret = ParseLineInfo(xx, ".*(BAND:.+)PCI");
+					if(ret.indexOf("BAND")>=0)
+						mStrBAND =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrPCI = ret = ParseLineInfo(xx, ".*(PCI:.+)RSRP");
+					ret = ParseLineInfo(xx, ".*(PCI:.+)RSRP");
+					if(ret.indexOf("PCI")>=0)
+						mStrPCI =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrRSRP = ret = ParseLineInfo(xx, ".*(RSRP:.+)RSRQ");
+					ret = ParseLineInfo(xx, ".*(RSRP:.+)RSRQ");
+					if(ret.indexOf("RSRP")>=0)
+						mStrRSRP =  ret;
 					Log.e("ARIC","RECV:"+ret);
-					mStrRSSI = ret = ParseLineInfo(xx, ".*(RSSI:.+)[\r|\n| ]");
+					ret = ParseLineInfo(xx, ".*(RSRQ:.+)RSSI");
+					if(ret.indexOf("RSRQ")>=0)
+						mStrRSRQ =  ret;
 					Log.e("ARIC","RECV:"+ret);
+					ret = ParseLineInfo(xx, ".*(RSSI:.+)[\r|\n| ]");
+					if(ret.indexOf("RSSI")>=0)
+						mStrRSSI =  ret;
+					Log.e("ARIC","RECV:"+ret);
+					//mtvMCC,mtvMNC,mtvEARFCN,mtvGCELLID,mtvTAC,mtvCAT,mtvSINR,mtvBIND,mtvPCI,mtvRSRP,mtvRSRQ,mtvRSSI;
+					 Message message = new Message();
+                     message.what = UPDATE_SIGNAL_INFO;
+                     message.obj = "Update signal";
+                     f3_handler.sendMessage(message);
+			        
 					playSound(2,0);
 					count =0;
 				}
@@ -193,7 +278,7 @@ public class Fragment3 extends Fragment implements OnClickListener{
 private class ConnectThread extends Thread{
 		
 		private  BluetoothDevice mmDevice;
-		private int count;
+		private int count,cxt;
 		
 		public ConnectThread(BluetoothDevice device)
 		{
@@ -202,6 +287,7 @@ private class ConnectThread extends Thread{
 			BluetoothSocket tmp = null;
 			mmDevice = device;
 			count=0;
+			cxt = 0;
 			
 			try {
 				tmp = device.createRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")); //24c71ae4-27e4-4194-b6b1-1fb27f962887"));
@@ -261,6 +347,12 @@ private class ConnectThread extends Thread{
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}
+				if(cxt > 200)
+				{
+				
+			        
+					cxt = 0;
 				}
 			}
 			
